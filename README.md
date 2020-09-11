@@ -24,12 +24,12 @@ Tingle is a minimalist and easy-to-use modal plugin written in pure JavaScript:
 Run the demo and listen for changes:
 
 ```bash
-$ git clone git@github.com:<username>/<repository>
+$ git clone git@github.com:<EfratKlause>/<modal-cards>
 $ cd ModalCards
 $ npm install
 ```
 
 ## License
 
-© 2020 [EfratShemesh](https://github.com/efratshemesh)  
+© 2020 [EfratKlause](https://github.com/EfratKlause)  
 Released under the [MIT LICENSE](http://opensource.org/licenses/MIT)
