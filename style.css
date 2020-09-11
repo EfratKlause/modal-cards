@@ -1,0 +1,167 @@
+/* Index CSS file */
+
+
+html,body {
+    font-family: sans-serif;
+    line-height: 1.7em;
+}
+
+.header {
+    width: 100%;
+    height: auto;
+}
+
+.topBar {
+    width: 100%;
+    height: 40px;
+    background-color: #37464f;
+}
+
+.headerText {
+    color: white;
+    text-align: center;
+    font-size: 1.3rem;
+    background-color: #62717b;
+    padding-top: 15px;
+    padding-bottom: 30px;
+    box-shadow: 0px 2px 5px 0px #888888;
+}
+
+.footer {
+    margin: 20px 0;
+    width: 100%;
+    height: auto;
+    background-color: #37464f; 
+    color: white;
+    text-align: center;
+    padding: 30px;
+    box-shadow: 0px 2px 5px 0px #888888;
+}
+
+.layout {
+    display: flex;
+}
+
+
+.sideNav {
+    justify-content: center;
+    margin: 20px auto;
+    line-height: 2em;
+}
+
+.main {
+    margin-right: auto;
+    margin-left: auto;
+    width: 70%;
+}
+
+.code {
+    background-color: #F5F5F6; 
+    margin-top: 10px;
+    padding: 15px;
+    display: block;
+    border-radius: 5px;
+}
+
+.codeType {
+    background-color: #F5F5F6; 
+    margin-top: 10px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.demoBtn {
+     background-color: #F06292;
+     padding: 10px;
+     border-radius: 5px;
+     border-style: none;
+     box-shadow: 2px 2px 2px #888888;
+     color: white;
+     margin-right: 5px;
+}
+
+.sideNav li {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sideNav a {
+    text-decoration: none;
+    
+}
+
+.sideNav a:link {
+    color: black;
+}
+
+.sideNav a:visited {
+    color: black;
+}
+
+.sideNav a:hover {
+    background-color: white; 
+    color: #F06292;
+    border: none;
+}
+
+.sideNav a:active {
+    background-color: white; 
+    color: #ff086b;
+    border: none;
+}
+
+a:focus {
+    outline: 0;
+}
+
+hr {
+    border-top: 0.1px solid lightGray;
+}
+
+.api {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 10px 0;
+}
+
+.api tr:nth-child(even){background-color: #F5F5F6;}
+
+.api th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #888888;
+    color: white;
+}
+
+.api th, .api td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+li {
+    margin: 0 0 6px 0;
+}
+
+.indentA {
+    margin: 0 0 0 30px;
+}
+
+.indentB {
+    margin: 0 0 0 60px;
+}
+
+.indentC {
+    margin: 0 0 0 90px;
+}
+
+.config {
+    margin: 20px 0;
+}
+
+span.thick {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+

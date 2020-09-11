@@ -1,0 +1,20 @@
+/* Plugins CSS file */
+
+.drag {
+    position: absolute;
+    left: 100px;
+    top: 100px;
+}
+
+.resize {
+    width: 250px;
+    height:150px;
+    overflow: auto;
+    resize: both;
+    max-width: 600px;
+    max-height: 600px;
+    min-width: 300px;
+    min-height: 150px;
+    box-sizing: border-box;
+    border: 1px solid black;
+}

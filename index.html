@@ -1,0 +1,506 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ModalCards.js</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="modal.css">
+    <link rel="stylesheet" href="plugin.css">
+</head>
+<body>
+  
+   <header class="header">
+      <div class="topBar" style="background-color:#37464f"></div>
+       <div class="headerText">
+           <h3>Modal Cards</h3>
+           <div> A lightweight OOP Modal pluging writtem in pure JavaScript</div>
+       </div>
+   </header>
+   
+   <main class="layout">
+       <aside class="sideNav">
+           <ul>
+               <li>
+                   <a href="#Introduction">Introduction</a><hr>
+               </li>
+               <li>
+                   <a href="#Examples">Introduction</a><hr>
+               </li>
+               <li>
+                   <a href="#Installation">Installation</a><hr>
+               </li>
+               <li>
+                   <a href="#Usage">Usage</a><hr>
+               </li>
+               <li>
+                   <a href="#Configuration">Configuration</a><hr>
+               </li>
+               <li>
+                   <a href="#PlugIns">PlugIns</a><hr>
+               </li>
+               <li>
+                   <a href="#Styling">Styling</a><hr>
+               </li>
+           </ul>
+       </aside>
+       
+       <article class="main">      
+            <div id="Introduction">
+                  <h3>Introduction</h3>
+                  <p>ModalCards.js is a OOP lightweight, configurable modal library written in pure JavaScript.
+                  <h4>Main features of the library:</h4>
+                  <ul>
+                     <li>Interactions handled by the library:
+                         <ul>
+                          <li>Closing modal on overlay click</li>
+                          <li>Closing modal by pressing on close icon</li>
+                          <li>Minimize modal to try</li>
+                          <li>Drag modal</li>
+                          <li>Resize modal</li>
+                          <li>Add buttons and Icons</li>
+                      </ul>
+                     </li>
+                     <li>Follow Object Oriented Programing conventions.</li>
+                     <li>Implement plugin architecture principles offering the user the opportunity to extend the program without touching the core modal library.</li>
+                     <li>Allow custom dom event management.</li>
+                  </ul> 
+              </div>
+
+            <div id="Examples">
+               <h3>Examples</h3>
+                   <button class="demoBtn openSimpleModalBtn">Simple Modal</button>
+                   <button class="demoBtn openBtnModalBtn">Add Buttons</button>
+                   <button class="demoBtn openLoginModalBtn">Login Modal</button>                       
+                   <button class="demoBtn openDragModalBtn">Drag Modal</button>
+                   <button class="demoBtn openResizeModalBtn">Resize Modal</button>  
+              </div>
+
+            <div id="Installation">
+               <h3>Installation</h3>
+               <div>
+                   <table  class="api">
+                       <tr>
+                           <div>1. Choose your preferred installation method, install from the command line via npm or by downloading a minimized file:</div> 
+                           <th>Method</th>
+                           <th>Procedure</th>
+                       </tr>
+                       <tr>
+                           <td>NPM</td>
+                           <td class="code">npm install https:&sol;&sol;github.com&sol;&lt;username&gt;&sol;&lt;repository&gt;</td>
+                       </tr>
+                       <tr>
+                           <td>Download file</td>
+                           <td>
+                               <a href="#">Download zip</a></td>
+                       </tr>
+                   </table>
+               </div>
+               <br>
+               <div>2. Include modalCards in your document:</div>
+               <div class="code"><code>&lt;script src="modalCards.min.js"&gt;&lt;script&gt;</code></div>
+            </div>
+
+            <div id="Usage">
+               <h3>Usage</h3>
+               <p>Designed to be easy to use, it does most of the heavy lifting behind the scenes and exposes a simple api to interact with the dom.</p>
+               <div>
+                   <p>1. Create a customizable model object.</p>
+                   <p>2. Use the init() method to initiate the desired HTML structure.</p>
+                   <p>2. Insert your content to the modal with API methods.</p>
+                   <p>3. Add plugins as needed.</p>
+               </div>
+            </div>
+
+            <div id="Configuration">
+                   <h3 >Configuration</h3>
+                   <p>The modal object is configurable upon object instantiation and in runtime via API. This allows you to set custom callbacks and control behaviour of the modal.
+                   </p>
+            </div>
+                   
+            <div>
+                   <div><span class="thick">1.</span>Customization is possible through the 'options' property of the Model object. Example of the JSON object definition:</div>
+                   <div class="code">
+                       <div><code>let simpleModal = new Modal(
+                                <div class="indentA">options = {</div>
+                                <div class="indentB">onClose: function(f, b) { // [1]</div>
+                                <div class="indentC">console.log('modal close');</div>
+                                <div class="indentB">},</div>
+                                <div class="indentB">onOpen: function() { // [2]</div>
+                                <div class="indentC">console.log('modal open');</div>
+                                <div class="indentB">},</div>
+                                <div class="indentB">beforeOpen: null, // [3]</div>
+                                <div class="indentB">beforeClose: null, // [4]</div>
+                                <div class="indentB">header: true, // [5]</div>
+                                <div class="indentB">footer: false, // [6]</div>
+                                <div class="indentB">cssClass: ['custom-class-1', 'custom-class-2'], // [7]</div>
+                                <div class="indentB">closeLabel: 'Close', // [8]</div>
+                                <div class="indentB">closeMethods: ['overlay']  // [9]</div>
+                                <div class="indentA">}</div>
+                                );
+                            </code>   
+                       </div>
+                   </div>
+                                 
+                   <div>
+                      <div class="config">
+                          <div>[1] onClose <span class="codeType">function</span></div>
+                          <div>This is fired when the modal is closing. The anonymous function is completely customizable and can accept any parameter and return any result. </div>
+                      </div>
+                      <div class="config">
+                          <div>[2] onOpen <span class="codeType">function</span></div>
+                          <div>This is fired when the modal is opening. The anonymous function is completely customizable and can accept any parameter and return any result.</div>
+                      </div>
+                      <div class="config">
+                          <div>[3] beforeOpen <span class="codeType">function</span></div>
+                          <div>This is fired before the modal is opening. The anonymous function is completely customizable and can accept any parameter and return any result.</div>
+                      </div>
+                      <div class="config">
+                          <div>[4] beforeClose <span class="codeType">function</span></div>
+                          <div>This is fired before the modal is opening. The anonymous function is completely customizable and can accept any parameter and return any result.</div>
+                      </div>
+                      <div class="config">
+                          <div>[5] header <span class="codeType">boolean</span></div>
+                          <div>This creates the Html element where header of the modal will be placed as a child of the modal container. The default value is <code class="codeType">false</code></div>
+                      </div>
+                      <div class="config">
+                          <div>[6] footer <span class="codeType">boolean</span></div>
+                          <div>This creates the Html element where footer of the modal will be placed as a child of the modal container. The default value is <code class="codeType">false</code></div>
+                      </div>
+                      <div class="config">
+                          <div>[7] cssClass <span class="codeType">Array</span></div>
+                          <div>Custom classes to be applied when modal is open. The class is attached to the overlay property of the modal object. Default class is <code class="codeType">'.overlay-class'</code></div>
+                      </div>
+                      <div class="config">
+                          <div>[8] closeLabel <span class="codeType">string</span></div>
+                          <div>When <code class="codeType">'button'</code> is chosen as an option for <code class="codeType">'closeMethods'</code> key, this will be it's label.</div>
+                      </div>
+                      <div class="config">
+                          <div>[9] closeMethods <span class="codeType">Array</span></div>
+                          <div>Options of closing the modal by the user. The default value is <code class="codeType">'['overlay', 'button']'</code></div>
+                      </div>                               
+                </div>
+                
+                <div>
+                   <div><span class="thick">2.</span> Create the modal HTML structure:</div>
+                   <code>
+                       <div class="code">simpleModal.init();</div>
+                   </code>
+                </div>  
+                
+                <div>
+                    <div><span class="thick">3.</span> Add content with API methods</div>
+                    <code>
+                       <div class="code">simpleModal.setHeader('Simple Modal');</div>
+                       <div class="code">simpleModal.setContent('My modal content from API method! <br> Tap outside the dialog to close the Modal.');</div>    
+                    </code>
+                </div>      
+                                  
+                   
+                                 
+            </div>                                          
+                                
+            <div>
+               <p>You can also manipulate the modal by using the following API methods:</p>
+               <table class="api">
+                   <tr>
+                       <th>Name</th>
+                       <th>Param Type</th>
+                       <th>Description</th>
+                   </tr>
+                   <tr>
+                       <td>setHeader(header)</td>
+                       <td>String</td>
+                       <td>Set modal header</td>
+                   </tr>
+                   <tr>
+                       <td>setContent(content)</td>
+                       <td>String</td>
+                       <td>Set modal content</td>
+                   </tr>
+                   <tr>
+                       <td>setFooter(footer)</td>
+                       <td>String</td>
+                       <td>Set modal footer</td>
+                   </tr>
+                   <tr>
+                       <td>openModal()</td>
+                       <td></td>
+                       <td>Open modal</td>
+                   </tr>
+                   <tr>
+                       <td>closeModal()</td>
+                       <td></td>
+                       <td>Close modal</td>
+                   </tr>
+                   <tr>
+                       <td>minimize()</td>
+                       <td></td>
+                       <td>Minimize the modal window to try</td>
+                   </tr>
+                   <tr>
+                       <td>maximize()</td>
+                       <td></td>
+                       <td>Maximize the modal window to default size and position</td>
+                   </tr>
+                   <tr>
+                       <td>addHeaderBtn(label, cssClass, callback)</td>
+                       <td>String, String, function()</td>
+                       <td>add Header Buttons. Add costum label, css class and callback function - from API functions or create your own costum callback</td>
+                   </tr>
+                   <tr>
+                       <td>addFooterBtn(label, cssClass, callback)</td>
+                       <td>String, String, function()</td>
+                       <td>add Footer Buttons. Add costum label, css class and callback function - from API functions or create your own costum callback</td>
+                   </tr>
+                    <tr>
+                       <td>extend(plugin)</td>
+                       <td>String</td>
+                       <td>Load plugins to modal object. Use JS import() function</td>
+                   </tr>
+               </table>
+            </div>  
+           
+            <div id="PlugIns">
+               <h3>PlugIns</h3>
+               <div><span class="thick">4.</span>You can add our plugin files or create your own. This allow for light core file. To include plugin files: 
+               </div>
+               <div class="indentA">
+                    <div>1. Include the plugin file in the project folder.</div>
+                    <div>2. Use javascript import() method to load the plugin file in runtime and apply it to relevant instance of the Modal class.</div>
+                    <div>3. API Modal methods are accessible to instance from the import() function.</div>
+               </div>
+                
+                <h4>Drag and Drop Plugin</h4>
+                <div class="code">
+                <div>// add drag plugin</div>
+                <div><code>import('./modalDragPlugin.js').then((response) => {
+                dragModal.extend(response.ModalDragPlugin);
+                <br>dragModal.init();
+                <br>});</code></div>
+                </div>
+            </div>
+                  
+            <div>   
+               <h4>Resize Plugin</h4>
+               <div class="code">
+                    <div>// add resize plugin</div>
+                    <div><code>import('./modalResizePlugin.js').then((response) => {
+                    resizeModal.extend(response.modalResizePlugin);
+                    <br>resizeModal.init();</code><br>
+                    <br><div>// use Modal API</div>
+                    <code>resizeModal.setContent('my resized modal!');
+                    <br>});</code></div>
+                </div>
+           </div>
+           
+            <div id="Styling">
+               <h3>Styling</h3>
+               <div>modalCards uses just one small CSS. Once modalCards.js is loaded, include it in your project and customize it to fit your needs.</div>
+               <div class="code"><code>&lt;link rel="stylesheet" href="modalStyle.min.css"&gt;</code></div>
+           </div> 
+
+       </article>
+   </main>
+   
+   <footer class="footer">
+       <div>Developed by @EfratSKlause - 2020</div>
+   </footer>
+    
+    <script class="scriptTag" src="modalCards.js"></script>
+    <script>
+                
+   
+        window.onload = function() {
+            let simpleModal = new Modal(
+                options = {
+                    onClose: function(f, b) {
+                        console.log('modal close');
+                    }, 
+                    onOpen: function() {
+                        console.log('modal open');
+                    },
+                    beforeOpen: null, 
+                    beforeClose: null,
+                    header: true,
+                    footer: false,
+                    cssClass: ['custom-class-1', 'custom-class-2'],
+                    closeLabel: 'Close',
+                    closeMethods: ['overlay']
+                });
+            simpleModal.init();
+            simpleModal.setHeader('Simple Modal');
+            simpleModal.setContent('My modal content from API method! <br> Tap outside the dialog to close the Modal.');
+    
+            
+            // Open Simple Modal
+            let openBtn1 = document.getElementsByClassName('openSimpleModalBtn');
+            openBtn1[0].addEventListener('click', (e) => simpleModal.openModal());   
+            
+    <!-- end of simple modal -->
+            
+            
+    <!-- start of footer btn modal --> 
+            let footerBtnModal = new Modal(
+                options = {
+                    onClose: function(f, b) {
+                        //debugger;
+                        console.log('modal close');
+                    }, 
+                    onOpen: function() {
+                        console.log('modal open');
+                    },
+                    beforeOpen: null, 
+                    beforeClose: null,
+                    header: true,
+                    footer: true,
+                    cssClass: ['custom-class-1', 'custom-class-2'],
+                    closeLabel: 'Close',
+                    closeMethods: ['overlay', 'button'],
+                });
+            footerBtnModal.init();
+            footerBtnModal.setHeader('Dialog Box Modal'); 
+            footerBtnModal.setContent('my modal footer from API method!');
+            
+            
+            footerBtnModal.addHeaderBtn('-', 'custom-class', function(e){
+                e.stopPropagation();
+                footerBtnModal.minimize();
+            });
+            
+            footerBtnModal.addHeaderBtn('&#xf2d0;', 'custom-class', function(){
+                footerBtnModal.maximize();
+            });
+            
+            footerBtnModal.addHeaderBtn('X', 'custom-class', function() {
+                footerBtnModal.closeModal();
+            });    
+            
+            footerBtnModal.addFooterBtn('Confirm', 'custom-class', function(){
+                // your logic...
+            }); 
+            
+            footerBtnModal.addFooterBtn('Close', 'custom-class', function(){
+                footerBtnModal.closeModal();
+            }); 
+            
+                                    
+            // Open footer Btn Modal
+            let openBtn3 = document.getElementsByClassName('openBtnModalBtn');
+            openBtn3[0].addEventListener('click', (e) => footerBtnModal.openModal());
+             
+    <!-- end of footer btn modal --> 
+        
+        
+    <!-- start of drag modal --> 
+            let dragModal = new Modal(
+                options = {
+                    onClose: function(f, b) {
+                        console.log('modal close');
+                    }, 
+                    onOpen: function() {
+                        console.log('modal open');
+                    },
+                    beforeOpen: null, 
+                    beforeClose: null,
+                    footer: false,
+                    cssClass: ['custom-class-1', 'custom-class-2'],
+                    closeLabel: 'Close',
+                    closeMethods: ['overlay']
+                });
+
+
+                // add drag plugin
+                import('./modalDragPlugin.js').then((response) => {
+                    dragModal.extend(response.ModalDragPlugin);
+                    dragModal.init();
+                    dragModal.setContent('my drag modal!');
+                }); 
+                
+        
+                // Open drag Modal
+                let openBtn4 = document.getElementsByClassName('openDragModalBtn');
+                openBtn4[0].addEventListener('click', (e) => dragModal.openModal());
+
+            <!-- end of drag modal --> 
+
+
+            <!-- start of resize modal -->
+            let resizeModal = new Modal(
+                options = {
+                    onClose: function(f, b) {
+                        console.log('modal close');
+                    },
+                    onOpen: function() {
+                        console.log('modal open');
+                    },
+                    beforeOpen: null,
+                    beforeClose: null,
+                    footer: false,
+                    cssClass: ['custom-class-1', 'custom-class-2'],
+                    closeLabel: 'Close',
+                    closeMethods: ['overlay']
+                });
+
+            // add resize plugin
+            import('./modalResizePlugin.js').then((response) => {
+                resizeModal.extend(response.ModalResizePlugin);
+                resizeModal.init();
+                resizeModal.setContent('my resized modal!');
+            });
+
+            // Open drag Modal
+            let openBtn5 = document.getElementsByClassName('openResizeModalBtn');
+            openBtn5[0].addEventListener('click', (e) => resizeModal.openModal());
+
+            <!-- end of resize modal -->
+
+
+            <!-- start of login modal -->
+            let loginModal = new Modal(
+                options = {
+                    onClose: function(f, b) {
+                        //debugger;
+                        console.log('modal close');
+                    },
+                    onOpen: function() {
+                        console.log('modal open');
+                    },
+                    beforeOpen: null,
+                    beforeClose: null,
+                    header: true,
+                    footer: true,
+                    cssClass: ['custom-class-1', 'custom-class-2'],
+                    closeLabel: 'Close',
+                    closeMethods: ['overlay', 'button'],
+                });
+            loginModal.init();
+            loginModal.setHeader('Login');
+            loginModal.setContent('<div class="loginwrapper"><label for="somename" class="label-class">Name</label><input id="somename" class="input-class" type="text"><label for="somepassword" class="label-class">Password</label><input id="somepassword" class="input-class" type="password"></div>');
+
+            loginModal.addHeaderBtn('X', 'custom-class', function() {
+                loginModal.closeModal();
+            });
+
+            loginModal.addFooterBtn('Login', 'custom-class', function(){
+                // send http request to server
+            });
+
+            loginModal.addFooterBtn('Cancel', 'custom-class', function(){
+                loginModal.closeModal();
+            });
+
+
+            // Open footer Btn Modal
+            let openBtn6 = document.getElementsByClassName('openLoginModalBtn');
+            openBtn6[0].addEventListener('click', (e) => loginModal.openModal());
+
+        }
+
+    <!-- end of login modal -->
+            
+    
+           
+    </script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+/* Modal CSS file */
+
+
+html,body {
+    font-family: sans-serif;
+}
+
+.overlay-class {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    background: rgba(0, 0, 0, .65);
+}
+
+.modal-class {
+    justify-content: center;
+    position: relative;
+    flex-shrink: 0;
+    padding: 20px;
+    max-width: 500px;
+    min-width: 300px;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: auto;
+    border-radius: 5px;
+    background: #fff;
+    opacity: 1;
+    cursor: auto;
+    will-change: transform, opacity;
+}
+
+.header-class {
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-title{
+    margin: 0;
+    padding: 0;
+}
+
+.headerBtn {
+    background-color: white;
+    border: 0;
+}
+
+.content-class {
+    line-height: 1.6;
+    margin: 40px 0px;
+}
+
+.footer-class {
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-footer {
+    margin: 0;
+    padding: 0;
+}
+
+.footerBtn{
+    margin-left: 10px;
+    border: 0;
+    background-color: white;
+    font-size: 1em;
+    color: black;
+}
+
+.footerBtn:hover {
+    background-color: white; 
+    color: #F06292;
+    border: none;
+}
+
+.footerBtn:active {
+    background-color: white; 
+    color: #ff086b;
+    border: none;
+}
+
+button:focus {
+    outline: 0;
+}
+
+.modal-class_closeBtn {
+    display: block;
+}
+
+
+.loginwrapper {
+
+}
+
+.label-class {
+    display: block;
+}
+
+.input-class {
+    
+}
+
+
+
+
+
+
