@@ -1,6 +1,6 @@
 # modal-cards
 
-ModalCards.js is a OOP lightweight, configurable modal library written in pure JavaScript.
+ModalCards.js is an OOP lightweight, configurable modal library written in pure JavaScript.
 
 
 ## Documentation
